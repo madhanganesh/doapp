@@ -15,10 +15,10 @@ import (
 var db *sql.DB
 
 func main() {
-	os.Remove("./foo.db")
+	os.Remove("./doapp.sqlite")
 
 	var err error
-	db, err = sql.Open("sqlite3", "./foo.db")
+	db, err = sql.Open("sqlite3", "./doapp.sqlite")
 	if err != nil {
 		log.Fatal(err)
 	}
