@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -34,6 +35,9 @@ func main() {
 	}
 
 	router := chi.NewRouter()
+	router.Get("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprint(w, "Hello from DoApp!")
+	})
 	router.Post("/user", addUser)
 	router.Get("/user", getUsers)
 
